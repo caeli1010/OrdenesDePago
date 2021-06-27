@@ -1,7 +1,7 @@
 <h1>Comprobantes por alumnos</h1>
 <table>
     <thead>
-    <th>Apellido y Nombre  </th>
+    <th>Apellido y Nombre </th>
     <th>Legajo  </th>
     <th>Fecha  </th>
     <th>Hora  </th>
