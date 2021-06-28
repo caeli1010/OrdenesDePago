@@ -17,6 +17,7 @@ class Alumno extends Controller
         $data['alumnos'] = \DB::table('vw_datosxalumnos')->get();
         // print_r($data);
         return view('AlumnoVista', $data); 
+       
     }
 
     /**
@@ -48,7 +49,10 @@ class Alumno extends Controller
      */
     public function show($id)
     {
-        //
+        $data['alumnos'] = \DB::select('select * from vw_datosxalumnos where Legajo="'.$id.'"')->get();
+        // $data['alumnos'] = \DB::select('exec my_stored_procedure("Param1", "param2",..)')->get();
+        print_r($data);
+        // return view('AlumnoVista', $data); 
     }
 
     /**

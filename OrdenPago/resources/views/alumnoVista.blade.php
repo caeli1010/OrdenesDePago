@@ -44,7 +44,7 @@
         <?php echo $alumno->cuotas;?>
         </td>
         <td>
-        <a href="alumn/<?php echo $alumno->legajo;?>">Detalle</a>
+        <a href="alumn/{{$alumno->legajo}}/show">Detalle</a>
        
         </td>
     </tr>

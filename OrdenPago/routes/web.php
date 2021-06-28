@@ -18,6 +18,11 @@ Route::get('/', function () {
 });
 
 Route::get('/alumn', [Alumno::class, 'index']);
+Route::get('/alumn/{id}', [Alumno::class, 'show']);
+// Route::get('/alumn/{id}', function ($id) {
+//     return 'Alumno.show'.$id;
+// });
 
+// Route::resource('alumn','App\Http\Controllers\Alumno');
 // Route::get('/alum/{legajo}', 'Alumno@show')->name('Alumno.show');
 //Route::get('/alum/{legajo}',[Alumno::class, 'show'],['legajo'=>$legajo])
