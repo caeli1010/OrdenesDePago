@@ -1,4 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
 <h1>Comprobantes por alumnos</h1>
+<form action="" method="GET" enctype="multipart/form-data"> 
+@csrf
+    <label for="Fecha"> Seleciione una fecha </label>
+    <input type="datetime" id="Fecha" name="fecha"/> 
+    <input type="hidden" name="Legajo" value="<?=$idLegajo?>">
+    <input type="submit" name="Buscar"/>
+ </form>
 <table>
     <thead>
     <th>Apellido y Nombre </th>
@@ -16,35 +33,35 @@
 
     <tr>
         <td> 
-        <?php echo $alumno->apellido;?>
-        <?php echo $alumno->nombre;?>
+        <?php echo $alumno['apellido'];?>
+        <?php echo $alumno['nombre'];?>
         </td>
         <td>
-        <?php echo $alumno->legajo;?>
+        <?php echo $alumno['legajo'];?>
         </td>
         <td>
-        <?php echo $alumno->fecha;?>
+        <?php echo $alumno['fecha'];?>
         </td>
         <td>
-        <?php echo $alumno->hora;?>
+        <?php echo $alumno['hora'];?>
         </td>
         <td>
-        <?php echo $alumno->comprobante;?>
+        <?php echo $alumno['comprobante'];?>
         </td>
         <td>
-        <?php echo $alumno->nrocomprombante;?>
+        <?php echo $alumno['nrocomprombante'];?>
         </td>
         <td>
-        <?php echo $alumno->estado;?>
+        <?php echo $alumno['estado'];?>
         </td>
         <td>
-        <?php echo $alumno->importetotal;?>
+        <?php echo $alumno['importetotal'];?>
         </td>
         <td>
-        <?php echo $alumno->cuotas;?>
+        <?php echo $alumno['cuotas'];?>
         </td>
         <td>
-        <a href="alumn/{{$alumno->legajo}}/show">Detalle</a>
+        <a href="alumn/{{$alumno['legajo']}}">Detalle</a>
        
         </td>
     </tr>
@@ -52,3 +69,6 @@
 <?php endforeach;?>
     </tbody>
 </table>
+
+</body>
+</html>
