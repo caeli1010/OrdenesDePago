@@ -12,11 +12,17 @@ class Alumno extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id="")
     {
-        $data['alumnos'] = \DB::table('vw_datosxalumnos')->get();
-        // print_r($data);
-        return view('AlumnoVista', $data); 
+        $tabla = \DB::select("select * from listar_clientes_OUT('$id')");
+        // $tabla = \DB::table('vw_datosxalumnos')->get();
+        $tabla = collect($tabla)->map(function($x){return (array)$x;})->toArray();
+        if(count($tabla)>0){
+            return view('alumnoVista',array('alumnos'=>$tabla, 'idLegajo'=>$id));
+        }
+        else{
+            echo '<h2>No hay datos, por favor ingrese el legajo en la URL</h2>';
+        }
        
     }
 
@@ -47,13 +53,19 @@ class Alumno extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+ 
+    public function show($id, $fecha)
     {
-        $data['alumnos'] = \DB::select('select * from vw_datosxalumnos where Legajo="'.$id.'"')->get();
-        // $data['alumnos'] = \DB::select('exec my_stored_procedure("Param1", "param2",..)')->get();
-        print_r($data);
-        // return view('AlumnoVista', $data); 
+        $tabla = \DB::select("select * from listar_clientes_OUT('$id')");
+        $tabla = collect($tabla)->map(function($x){return (array)$x;})->toArray();
+        if(count($tabla)>0){
+            return view('alumnoDetalle',array('alumnos'=>$tabla));
+        }
+        else{
+            echo '<h2>No hay datos</h2>';
+        }
     }
+
 
     /**
      * Show the form for editing the specified resource.

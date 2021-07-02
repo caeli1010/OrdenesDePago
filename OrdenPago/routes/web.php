@@ -17,11 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/alumn', [Alumno::class, 'index']);
-Route::get('/alumn/{id}', [Alumno::class, 'show']);
-// Route::get('/alumn/{id}', function ($id) {
-//     return 'Alumno.show'.$id;
-// });
+Route::get('/alumn/{id}', [Alumno::class, 'index']);
+// Route::get('/alumn/{id}', [Alumno::class, 'show']);
+Route::get('alumn/{fecha}/{id}', 'Alumno@show');
+// Route::post('alumn/{id}', 'Alumno@edit');
+
+// Route::get('/alumn/{id}', ['alumn' => 'show', 'alumnos' => 'Alumno@show']);
 
 // Route::resource('alumn','App\Http\Controllers\Alumno');
 // Route::get('/alum/{legajo}', 'Alumno@show')->name('Alumno.show');
