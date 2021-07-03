@@ -92,6 +92,8 @@
                     <a href="https://nova.laravel.com">Nova</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://vapor.laravel.com">Vapor</a>
+
+                    <a href='alumnoVista.blade.php?id=24171' >Ver todos los comprobantes</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
