@@ -56,7 +56,7 @@ class Alumno extends Controller
  
     public function show($id, $fecha)
     {
-        $tabla = \DB::select("select * from listar_clientes_OUT('$id')");
+        $tabla = \DB::select("select * from listar_xfecha_OUT('$id', '$fecha')");
         $tabla = collect($tabla)->map(function($x){return (array)$x;})->toArray();
         if(count($tabla)>0){
             return view('alumnoDetalle',array('alumnos'=>$tabla));
