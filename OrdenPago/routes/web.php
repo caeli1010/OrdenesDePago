@@ -17,9 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/alumn/{id}', [Alumno::class, 'index']);
+Route::get('/alumn/{id}', [Alumno::class, 'index'])->name('tIndex');
 // Route::get('/alumn/{id}', [Alumno::class, 'show']);
-Route::get('alumn/{fecha}/{id}', 'Alumno@show');
+Route::get('alumn/{fecha}/{id}', 'Alumno@show')->name('tShow');
 // Route::post('alumn/{id}', 'Alumno@edit');
 
 // Route::get('/alumn/{id}', ['alumn' => 'show', 'alumnos' => 'Alumno@show']);

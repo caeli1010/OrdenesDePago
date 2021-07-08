@@ -92,9 +92,19 @@
                     <a href="https://nova.laravel.com">Nova</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://vapor.laravel.com">Vapor</a>
-
-                    <a href='alumnoVista.blade.php?id=24171' >Ver todos los comprobantes</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
+                </div>
+                <div>
+                <h1>Comprobantes por alumnos</h1>
+                    <form action="" method="GET" enctype="multipart/form-data"> 
+                    @csrf
+                        <label for="Legajo"> Escriba el numero de legajo </label>
+                        <input type="text" id="Legajo" name="Numero de Legajo"/> 
+                        <!-- <input type="hidden" name="Legajo" value="<>">
+                        <input type="submit" name="Buscar"/>
+                         -->
+                    </form>
+                    <a href="{url('tIndex')">Ver</a>
                 </div>
             </div>
         </div>

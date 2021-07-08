@@ -15,6 +15,7 @@
     <input type="datetime" id="Fecha" name="fecha"/> 
     <input type="hidden" name="Legajo" value="<?=$idLegajo?>">
     <input type="submit" name="Buscar"/>
+    
  </form>
 <table>
     <thead>
@@ -61,7 +62,7 @@
         <?php echo $alumno['cuotas'];?>
         </td>
         <td>
-        <a href="alumn/{{$alumno['legajo']}}">Detalle</a>
+        
        
         </td>
     </tr>
